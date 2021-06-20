@@ -26,6 +26,28 @@
             </div>
         </div>
     </div>
+    <div th:fragment="table-links">
+        <table class="job-listing">
+            <tr th:each="job : ${jobs}">
+                <td>
+                    <p th:text="'ID: '"></p>
+                    <p th:text="'Name: '"></p>
+                    <p th:text="'Employer: '"></p>
+                    <p th:text="'Location: '"></p>
+                    <p th:text="'Position: '"></p>
+                    <p th:text="'Skill: '"></p>
+                </td>
+                <td class="table-links">
+                    <p th:text="${job.id}">Test Data</p>
+                    <p th:text="${job.name}">Test Data</p>
+                    <p><a th:href="@{/list/jobs(column='employer',value=${job.employer})}" th:text="${job.employer}">Test Data</a></p>
+                    <p><a th:href="@{/list/jobs(column='location',value=${job.location})}" th:text="${job.location}">Test Data</a></p>
+                    <p><a th:href="@{/list/jobs(column='positionType',value=${job.positionType})}" th:text="${job.positionType}">Test Data</a></p>
+                    <p><a th:href="@{/list/jobs(column='coreCompetency',value=${job.coreCompetency})}" th:text="${job.coreCompetency}">Test Data</a></p>
+                </td>
+            </tr>
+        </table>
+    </div>
 
 </body>
 </html>
