@@ -42,7 +42,7 @@
             <td>
                 <p th:text="'ID: '+ ${job.id}">Test Data</p>
                 <p th:text="${'Name: ' + job.name}">Test Data</p>
-                <p th:text="${'Employer: ' + job.employer}">Test Data</p>
+                <a th:href="@{/list/jobs?column=employer,value=${job.employer})}" th:text="${'Employer: ' + job.employer}">Test Data</a>
                 <p th:text="${'Location: ' + job.location}">Test Data</p>
                 <p th:text="${'Position: ' + job.positionType}">Test Data</p>
                 <p th:text="${'Skill: ' + job.coreCompetency}">Test Data</p>
